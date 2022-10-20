@@ -1,0 +1,383 @@
+@charset "UTF-8";
+:root {
+	--basic-color : #B5D692;
+	--thick-color : #A3CCA3;
+	--deep-color : #5D9D61;
+} /*기본 컬러 변수들 지정*/
+
+body {
+	margin : 0;
+	font-family: 'Noto Serif KR';
+	background-color : #FAFAFA;
+}
+
+a {
+	text-decoration : none;
+	color : #F0F4F5;
+}
+
+.navbar {
+	position : top;
+	bottom : 0;
+	display : flex;
+	justify-content : space-between;
+	align-items : center;
+	background-color : var(--basic-color);
+	padding : 0;
+	width : 100%;
+	font-size : 18px;
+}
+
+.navbar_logo {
+	display : block;
+	font-size : 28px;
+}
+
+.navbar_logo i {
+	color : var(--deep-color);
+}
+
+.navbar_logo:hover {
+
+}
+
+.navbar_menu {
+	display : flex;
+	list-style : none;
+	padding-left : 0;
+}
+
+.navbar_menu li {
+	padding : 10px 15px;
+}
+
+.navbar_menu li:hover {
+	background-color : var(--thick-color);
+	border-radius : 8px;
+}
+
+.navbar_login {
+	display : flex;
+	padding-left : 0;
+}
+
+.navbar_login a {
+	padding : 10px 15px;
+}
+
+.navbar_login a:hover {
+	background-color : var(--thick-color);
+	border-radius : 8px;
+}
+
+.navbar_login_dd {
+  position : relative;
+  display : inline-block;
+}
+
+.login_dd_content {
+  display : none;
+  position : absolute;
+  z-index : 1; /*다른 요소들보다 앞에 배치*/
+  padding : 3px;
+  min-width : 80px;
+  border-radius : 5px;
+  background-color : var(--deep-color);
+}
+
+.login_dd_content a {
+  display : block;
+  font-size : 18px;
+  color : white;
+}
+
+.login_dd_content a:hover {
+	padding : 2px;
+	color : white;
+	background-color : var(--thick-color);
+	border-radius : 5px;
+}
+
+.navbar_login_dd:hover .login_dd_content {
+  display: block;
+}
+
+.navbar_toggleBtn {
+	display : none;
+	position : absolute;
+	right : 32px;
+}
+
+.nowWorking {
+	font-size : 40px;
+	text-align : center;
+	margin : 50px;
+}
+
+
+
+@media screen and (max-width : 768px) {
+	.navbar {
+		flex-direction : column;
+		align-items : flex-start;
+		padding : 10px 30px;
+	}
+	
+	.navbar_menu {
+		flex-direction : column;
+		align-items : center;
+		width : 100%;
+	}
+	
+	.navbar_menu li {
+		width : 100%;
+		text-align : center;
+	}
+	
+	.navbar_login {
+		flex-direction : column;
+		align-items : center;
+		width : 100%;
+	}
+	
+	.navbar_login a {
+		width : 100%;
+		text-align : center;
+	}
+	
+	.navbar_toggleBtn {
+		display : block;
+		position : absolute;
+		right : 32px;
+		font-size : 24px;
+	}
+	
+}
+/* 메인화면 스타일 */
+
+.errorBox {
+	justify-content : center;
+	text-align : center;
+	margin : 108px auto;
+	padding : 15px;
+	width : 400px;
+	border : 1px solid grey;
+	border-radius : 20px;
+	background-color : white;
+}
+
+.errorBox div {
+	display : inline;
+}
+
+.errorIcon {
+	font-size : 60px;
+	color : #DB4455;
+}
+
+.errorText {
+	font-size : 30px;
+	margin : 15px;
+}
+
+.errorText a {
+	font-size : 18px;
+	color : blue;
+}
+
+.errorText a:active {
+	color : red;
+}
+/* 오류 페이지 스타일 */
+
+
+.login_box {
+	display : flex;
+	flex-direction : column;
+	justify-content : center;
+	align-items : center;
+	text-align: center;
+	margin : 108px auto;
+	padding : 0 15px 15px 15px;
+	width: 400px;
+	height : 500px;
+	border: 1px solid grey;
+	border-radius: 20px;
+	background-color : white;
+}
+
+.login_box form {
+	display : flex;
+	flex-direction : column;
+	margin-top : 40px;
+}
+
+.login_box input {
+	margin : 5px;
+	padding : 15px;
+}
+
+.login_box a {
+	color : blue;
+}
+
+.login_box a:active {
+	color : red;
+}
+/* 로그인 화면 스타일 */
+
+.register_box {
+	display : flex;
+	flex-direction : column;
+	justify-content : center;
+	align-items : center;
+	text-align : center;
+	margin : 108px auto;
+	padding : 0 15px 15px 15px;
+	width : 400px;
+	border : 1px solid grey;
+	border-radius : 20px;
+	background-color : white;
+}
+
+.register_box form {
+	display : flex;
+	flex-direction : column;
+	margin-top : 40px;
+}
+
+.register_box input {
+	margin : 5px;
+	padding : 15px;
+/*	border : 1px solid var(--basic-color); */
+}
+/*
+.register_box input:focus {
+	animation-name : border-focus;
+	animation-duration : 1s;
+	animation-fill-mode : forwards;
+}
+
+@keyframes border-focus {
+ 		from {
+          border-radius : 15px;
+        }
+        to {
+          border-radius: 15px;
+        }
+}*/
+
+.register_box select {
+	margin : 20px 5px auto 5px;
+	padding : 5px;
+}
+
+.register_box_phoneNumber {
+	display : flex;
+	justify-content : space-between;
+	align-items : center;	
+}
+
+.register_box_sex {
+	display : flex;
+	justify-content : space-evenly;
+	align-items : center;
+	font-size : 24px;
+	margin : 20px 5px auto 5px;
+}
+
+.register_box_ad {
+	display : flex;
+	justify-content : space-around;
+	align-items : center;
+	font-size : 24px;	
+}
+
+.register_box_introduce {
+	display : block;
+/*	flex-direction : column;*/
+	font-size : 24px;
+	margin : 20px 5px auto 5px;
+}
+
+.register_box_introduce textarea {
+	margin-top : 5px;
+	width : 385px;
+	height : 100px;
+}
+/* 회원가입 화면 스타일 */
+
+.idCheck {
+	width : 300px;
+	text-align : center;
+	font-size : 18px;
+	margin : 20px auto;
+	padding : 0px 15px 15px 15px;
+	border : 1px solid grey;
+	border-radius : 20px;
+	background-color : white;
+}
+
+.idCheck input {
+	display : inline;
+	margin : 0 0 15px 0;
+	padding : 10px;
+}
+/*
+.idCheck input:focus {
+	background-color : (--basic-color);
+}
+*/
+.idCheck a {
+	color : blue;
+}
+
+.idCheck a:active {
+	color : red;
+}
+/* 아이디, 닉네임 중복체크 화면 스타일 */
+
+.boardA {
+	width : 75%;
+	margin : 108px auto;
+	padding : 15px;
+	text-align : center;
+	background-color : white;
+	border : 1px solid grey;
+	border-radius : 20px;
+
+}
+
+.boardA table {
+	margin : 30px auto;
+}
+
+.boardA a {
+	color : black;
+}
+
+.boardAlist td {
+	padding : 15px;
+}
+
+.boardAlist:hover{
+	background-color : var(--basic-color);
+}
+
+.boardAview {
+	width : 75%;
+	margin : 108px auto;
+	padding : 15px;
+	text-align : center;
+	background-color : white;
+	border : 1px solid grey;
+	border-radius : 20px;
+}
+
+.boardAview table {
+	margin : 30px auto;
+}
+
+.boardAview td {
+	padding : 5px;
+}
