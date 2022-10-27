@@ -3,69 +3,95 @@
 	--basic-color : #B5D692;
 	--thick-color : #A3CCA3;
 	--deep-color : #5D9D61;
-} /*기본 컬러 변수들 지정*/
+} /* 베이스 컬러 변수 지정 */
 
 body {
+	width : 100%;
+	height : 100%;
 	margin : 0;
-	font-family: 'Noto Serif KR';
+	font-family : 'Jua', 'Noto Serif KR';
+	font-size : 14px;
 	background-color : #FAFAFA;
 }
 
+footer {
+	width : 100%;
+	display : flex;
+	bottom : 0;
+}
+
 a {
+	-webkit-tap-highlight-color:transparent;
 	text-decoration : none;
 	color : #F0F4F5;
 }
 
+/* 태그 공통 설정 */
+
+
+
+
+
 .navbar {
-	position : top;
-	bottom : 0;
+	position : fixed;
+	z-index : 1;
+	top : 0;
 	display : flex;
 	justify-content : space-between;
 	align-items : center;
-	background-color : var(--basic-color);
 	padding : 0;
 	width : 100%;
-	font-size : 18px;
+	background-color : var(--basic-color);
+}
+.navbar_m {
+	position : fixed;
+	z-index : 1;
+	top : 0;
+	display : flex;
+	justify-content : space-between;
+	align-items : center;
+	padding : 0;
+	width : 100%;
 }
 
 .navbar_logo {
 	display : block;
-	font-size : 28px;
+	font-size : 2em;
+}
+.navbar_logo_m {
+	display : block;
+	font-size : 2em;
 }
 
-.navbar_logo i {
-	color : var(--deep-color);
-}
-
-.navbar_logo:hover {
-
-}
-
-.navbar_menu {
-	display : flex;
-	list-style : none;
-	padding-left : 0;
-}
-
-.navbar_menu li {
-	padding : 10px 15px;
-}
-
-.navbar_menu li:hover {
-	background-color : var(--thick-color);
-	border-radius : 8px;
-}
+.navbar_logo i { color : var(--deep-color); }
+.navbar_logo a { color : white; }
+.navbar_logo_m i { color : var(--deep-color); }
+.navbar_logo_m a { color : var(--basic-color); }
 
 .navbar_login {
+	display : flex;
+	padding-left : 0;
+}
+.navbar_login_m {
 	display : flex;
 	padding-left : 0;
 }
 
 .navbar_login a {
 	padding : 10px 15px;
+	font-size : 1.3em;
+	color : white;
 }
-
 .navbar_login a:hover {
+	background-color : var(--thick-color);
+	border-radius : 8px;
+}
+.navbar_login_m a {
+	padding : 10px 15px;
+	font-size : 1.3em;
+	color : var(--basic-color);
+}
+.navbar_login_m a:hover {
 	background-color : var(--thick-color);
 	border-radius : 8px;
 }
@@ -101,59 +127,36 @@ a {
 .navbar_login_dd:hover .login_dd_content {
   display: block;
 }
+/* 상단바 스타일 */
 
-.navbar_toggleBtn {
-	display : none;
-	position : absolute;
-	right : 32px;
+
+
+
+
+.mainpage { margin-top : 25vh;}
+.welcome_p1 { text-align : center; }
+.welcome_p1 span.hi { font-size : 6em; }
+.welcome_p1 span.hi_1 { font-size : 2em; }
+.welcome_p1 span.hi_2 {
+	font-size : 3em;
+	padding : 12px;
+	border-style : 1px solid;
+	border-radius : 2px;
+	color : white;
+	background-color : black;
+	box-shadow: 5px 5px 5px 5px grey;
+}
+.welcome_p1 span.hi_2 i { color : yellow; }
+.welcome_p1 span.hi_3 {
+	font-size : 1em;
+	color : grey;
 }
 
-.nowWorking {
-	font-size : 40px;
-	text-align : center;
-	margin : 50px;
-}
-
-
-
-@media screen and (max-width : 768px) {
-	.navbar {
-		flex-direction : column;
-		align-items : flex-start;
-		padding : 10px 30px;
-	}
-	
-	.navbar_menu {
-		flex-direction : column;
-		align-items : center;
-		width : 100%;
-	}
-	
-	.navbar_menu li {
-		width : 100%;
-		text-align : center;
-	}
-	
-	.navbar_login {
-		flex-direction : column;
-		align-items : center;
-		width : 100%;
-	}
-	
-	.navbar_login a {
-		width : 100%;
-		text-align : center;
-	}
-	
-	.navbar_toggleBtn {
-		display : block;
-		position : absolute;
-		right : 32px;
-		font-size : 24px;
-	}
-	
-}
 /* 메인화면 스타일 */
+
+
+
+
 
 .errorBox {
 	justify-content : center;
@@ -191,17 +194,20 @@ a {
 /* 오류 페이지 스타일 */
 
 
+
+
+
 .login_box {
 	display : flex;
 	flex-direction : column;
 	justify-content : center;
 	align-items : center;
 	text-align: center;
-	margin : 108px auto;
-	padding : 0 15px 15px 15px;
+	margin : 15vh auto;
+	padding :0;
 	width: 400px;
 	height : 500px;
-	border: 1px solid grey;
+	border: 1px solid green;
 	border-radius: 20px;
 	background-color : white;
 }
@@ -226,16 +232,23 @@ a {
 }
 /* 로그인 화면 스타일 */
 
+
+
+
+
 .register_box {
 	display : flex;
 	flex-direction : column;
 	justify-content : center;
 	align-items : center;
 	text-align : center;
-	margin : 108px auto;
-	padding : 0 15px 15px 15px;
+	margin : auto;
+	margin-top : 15vh;
+	margin-bottom : 10vh;
+	padding : 0;
 	width : 400px;
-	border : 1px solid grey;
+	height : 1250px;
+	border : 1px solid green;
 	border-radius : 20px;
 	background-color : white;
 }
@@ -243,7 +256,7 @@ a {
 .register_box form {
 	display : flex;
 	flex-direction : column;
-	margin-top : 40px;
+	margin-top : 2vh;;
 }
 
 .register_box input {
@@ -251,21 +264,6 @@ a {
 	padding : 15px;
 /*	border : 1px solid var(--basic-color); */
 }
-/*
-.register_box input:focus {
-	animation-name : border-focus;
-	animation-duration : 1s;
-	animation-fill-mode : forwards;
-}
-
-@keyframes border-focus {
- 		from {
-          border-radius : 15px;
-        }
-        to {
-          border-radius: 15px;
-        }
-}*/
 
 .register_box select {
 	margin : 20px 5px auto 5px;
@@ -302,10 +300,14 @@ a {
 
 .register_box_introduce textarea {
 	margin-top : 5px;
-	width : 385px;
+	width : 360px;
 	height : 100px;
 }
 /* 회원가입 화면 스타일 */
+
+
+
+
 
 .idCheck {
 	width : 300px;
@@ -337,6 +339,10 @@ a {
 }
 /* 아이디, 닉네임 중복체크 화면 스타일 */
 
+
+
+
+
 .boardA {
 	width : 75%;
 	margin : 108px auto;
@@ -345,7 +351,6 @@ a {
 	background-color : white;
 	border : 1px solid grey;
 	border-radius : 20px;
-
 }
 
 .boardA table {
